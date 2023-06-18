@@ -75,7 +75,7 @@ Now start ayab with
 
 ### macOS
 
-* If on Apple Silicon (M1 & M2 chips)*
+*If on Apple Silicon (M1 & M2 chips)*
     You should install the development environment and tools under the x86_64 architecture. Because the native arch for Apple silicon is arm64, you need to tell the terminal that it should install the 'Rosetta2' versions of packages. Before installing anything via homebrew, find the Terminal application in your Applications folder (under Utilities), then right click, `Get Info`, and check the box to `Open using Rosetta`. After running this, open the terminal and check that it works by entering 'arch'. This should return `i386`.
 
 You need Python 3.5.3 and PyQt5.
