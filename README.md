@@ -75,6 +75,9 @@ Now start ayab with
 
 ### macOS
 
+* If on Apple Silicon (M1 & M2 chips)*
+    You should install the development environment and tools under the x86_64 architecture. Because the native arch for Apple silicon is arm64, you need to tell the terminal that it should install the 'Rosetta2' versions of packages. Before installing anything via homebrew, find the Terminal application in your Applications folder (under Utilities), then right click, `Get Info`, and check the box to `Open using Rosetta`. After running this, open the terminal and check that it works by entering 'arch'. This should return `i386`.
+
 You need Python 3.5.3 and PyQt5.
 For Python I would recommend `pyenv`
 You can install it using Homebrew
@@ -97,12 +100,12 @@ Create a virtual enviroment in the cloned repository
     pyenv virtualenv 3.5.3 venv
     pyenv activate venv
 
-(If the pyenv commands don't work out, you probably have to add
+(If the pyenv commands don't work out, you may have to add
 
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 
-to your ~/.bash_profile)
+to your ~/.bash_profile if using bash terminal or ~/.zshrc if using zsh terminal.)
 
 Then install the remaining prerequisites with
 
@@ -115,6 +118,8 @@ To solve pip3 SSL:TLSV1_ALERT_PROTOCOL_VERSION problem:
 Now start ayab with
 
     python3 -m fbs run
+
+If you get errors about `lrelease` missing, you can comment out the lines about translation [23:26] at the end of `setup_environment.ps1`.
 
 To be able to work on GUI elements and translation files, the Qt Dev tools are needed also:
 
